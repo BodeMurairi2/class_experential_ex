@@ -39,15 +39,17 @@ class Flight:
     def cancel_flight(self):
         still_travelling = True
         name = input("Enter your name: ").upper()
-        for passengers in self.passenger_details:
+        for passengers in self.passenger_names:
             if name == passengers["passenger_name"]:
-                user_choice = input(f"Are you still travelling? {self.passenger_details["passenger_name"]} (y/n): ")
+                user_choice = input(f"Are you still travelling? {self.passengers["passenger_name"]} (y/n): ").lower()
                 if user_choice == 'n':
                     still_travelling = False
-                    self.count = len(self.passenger_details) - 1
-                    return "passenger removed successfully"
-            else:
-                return "Have a safe journey. Enjoy your flight!"
+                    self.passenger_names.remove(passengers)
+                    print("passenger removed successfully")
+                    return 
+            elif:
+                print("Have a safe journey. Enjoy your flight!")
+                return 
 
 new_flight = Flight()
 
